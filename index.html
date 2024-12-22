@@ -1,0 +1,135 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux MCQ Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Welcome Animation -->
+    <div class="welcome-animation">
+        <div class="welcome-text">
+            Welcome to Linux MCQ Quiz
+            <span class="welcome-name">by Yogesh Parmar</span>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <i class="fas fa-terminal pulse"></i>
+                <span>Linux MCQ Pro</span>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h3>User Progress</h3>
+                    <p>Master Linux MCQs</p>
+                </div>
+            </div>
+
+            <div class="quiz-stats">
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span id="timeLeft">30:00</span>
+                        <label>Time Left</label>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <span id="score">0</span>
+                        <label>Score</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span>Progress</span>
+                    <span id="progressText">0/34</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="question-navigator">
+                <h3>Questions</h3>
+                <div class="question-grid" id="questionGrid"></div>
+            </div>
+
+            <!-- Add Restart Button in Sidebar -->
+            <button id="restartQuizBtn" class="restart-quiz-btn">
+                <i class="fas fa-redo"></i> Restart Quiz
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="quiz-container">
+                <div class="question-card" id="questionCard">
+                    <div class="question-header">
+                        <span class="question-number">Question <span id="currentQuestionNum">1</span></span>
+                        <div class="difficulty-badge" id="difficultyBadge">Medium</div>
+                    </div>
+
+                    <div class="question-content">
+                        <p id="questionText" class="question-text"></p>
+                        <div class="options-grid" id="optionsGrid"></div>
+                    </div>
+
+                    <div class="navigation-controls">
+                        <button class="nav-btn previous" id="prevBtn" onclick="previousQuestion()">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button class="nav-btn next" id="nextBtn" onclick="nextQuestion()">
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Results Modal -->
+        <div class="results-modal" id="resultsModal">
+            <h2 class="results-header">Quiz Complete!</h2>
+            <div class="results-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Score</div>
+                    <div class="stat-value" id="finalScore">0/34</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Accuracy</div>
+                    <div class="stat-value" id="accuracy">0%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Time Taken</div>
+                    <div class="stat-value" id="timeTaken">00:00</div>
+                </div>
+            </div>
+            <button class="restart-btn" onclick="restartQuiz()">
+                <i class="fas fa-redo"></i> Restart Quiz
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
